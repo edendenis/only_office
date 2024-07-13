@@ -18,9 +18,9 @@
 # O `OnlyOffice` é uma suíte de escritório online e de código aberto que oferece um conjunto abrangente de aplicativos para edição de documentos, planilhas e apresentações. Ele permite que indivíduos e equipes colaborem em tempo real, criando e editando documentos diretamente no navegador da web. O `OnlyOffice` suporta uma ampla variedade de formatos de arquivo, incluindo Microsoft Office, e oferece recursos avançados de formatação, revisão de documentos e controle de versão. Além disso, ele pode ser implantado em servidores locais ou em nuvem, proporcionando flexibilidade e segurança aos usuários. Com suas funcionalidades de colaboração e edição de documentos, o `OnlyOffice` é uma solução atraente para organizações que buscam uma alternativa de escritório online versátil e de código aberto.
 # 
 
-# ## 1. Configurar/Instalar o `OnlyOffice` no `Linux Ubuntu` [1]
+# ## 1. Configurar/Instalar/Usar o `OnlyOffice` no `Linux Ubuntu` [1]
 # 
-# Para instalar o `OnlyOffice` no `Linux Ubuntu`, você pode seguir estas etapas:
+# Para configurar/instalar/usar o `OnlyOffice` no `Linux Ubuntu`, você pode seguir estas etapas:
 # 
 # 1. Abra o `Terminal Emulator`. Você pode fazer isso pressionando: `Ctrl + Alt + T`
 # 
@@ -66,55 +66,18 @@
 # 8. Pode ser que aconteça o(s) erro(s): [2]
 # 
 #     ```
-#     W: GPG error: https://download.onlyoffice.com/repo/debian squeeze InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY <chave_gpg>
-#     E: The repository 'https://download.onlyoffice.com/repo/debian squeeze InRelease' is not signed.
-#     N: Updating from such a repository can't be done securely, and is therefore disabled by default.
-#     N: See apt-secure(8) manpage for repository creation and user configuration details.
-#     ```
-# 
-# O erro que você está enfrentando ocorre porque o sistema não conseguiu verificar a assinatura do repositório do `OnlyOffice`, o que é uma questão de segurança. Para resolver esse problema, você tem a opção abaixo.
-# 
-# 9. **Opção**: Adicionar a chave pública do repositório manualmente: Para adicionar a chave pública e permitir que o `apt` atualize o pacote, execute o seguinte comando: `
-# `
-# 
-# 10. Depois disso, tente atualizar a lista de pacotes novamente: `sudo apt update`
-
-# 11. Pode ser que aconteça o(s) erro(s): [2]
-# 
-#     ```
 #     W: https://download.onlyoffice.com/repo/debian/dists/squeeze/InRelease: Key is stored in legacy trusted.gpg keyring (`/etc/apt/trusted.gpg`), see the DEPRECATION section in apt-key(8) for details.
 #     ```
-#     aviso que você está vendo indica que a chave do repositório do OnlyOffice está armazenada no anel de chaves legado (`/etc/apt/trusted.gpg`), que está em desuso. Para resolver esse aviso, você deve mover a chave para um novo local que é mais seguro e recomendado pelas práticas atuais do Ubuntu.
-#     Passo a Passo para Corrigir o Aviso
 # 
-# 12. **Identificar a Chave do Repositório:** Primeiro, identifique a chave específica para o repositório OnlyOffice: `sudo apt-key list`
+#     Aviso que você está vendo indica que a chave do repositório do `OnlyOffice` está armazenada no anel de chaves legado (`/etc/apt/trusted.gpg`), que está em desuso. Para resolver esse aviso, você deve mover a chave para um novo local que é mais seguro e recomendado pelas práticas atuais do `Ubuntu`.
 # 
-#     Procure pela chave que corresponde ao OnlyOffice (provavelmente tem um ID que termina em `CB2DE8E5` ou algo semelhante). Anote este ID.
+# 9. **Remover o repositório existente (opcional)**: Primeiro, você pode remover o repositório existente que está causando o problema. Isso pode ser feito editando o arquivo correspondente em `/etc/apt/sources.list.d/`.
 # 
-# 13. **Exportar e Importar a Chave:** Agora, você vai exportar a chave para o novo formato e importá-la no diretório recomendado. Substitua`KEY_ID` pelo ID da chave que você anotou (`<chave_gpp>`):
+#     9.1 Liste os arquivos em `/etc/apt/sources.list.d/` para encontrar o arquivo do `OnlyOffice`: `ls /etc/apt/sources.list.d/`
 # 
-#     13.1 **Cria o diretório se ele não existir:** `sudo mkdir -p /usr/share/keyrings`
+#     9.2 Remova ou comente as linhas do repositório problemático. Por exemplo: `sudo nano /etc/apt/sources.list.d/onlyoffice.list`
 # 
-#     13.2 **Exporta a chave do anel legado e importa para o novo arquivo `.gpg`:** `sudo apt-key export <chave_gpg> | sudo gpg --no-default-keyring --keyring /usr/share/keyrings/onlyoffice-archive-keyring.gpg --import`
-# 
-# 14. Atualizar o Arquivo de Fontes do Repositório
-# 
-#     Você precisará editar o arquivo de fontes do OnlyOffice para que ele aponte para o novo anel de chaves. Este arquivo provavelmente está localizado em `/etc/apt/sources.list`:
-# 
-#     14.1 Abra o arquivo com um editor de texto (pode ser diferente de `onlyoffice.list`)
-# 
-#     ```
-#     # Abra o arquivo com um editor de texto (pode ser diferente de `onlyoffice.list`)
-#     sudo nano /etc/apt/sources.list.d/onlyoffice.list
-#     ```
-# 
-#     14.2 No arquivo, adicione ou modifique a linha que aponta para o repositório do OnlyOffice para incluir a referência à nova chave: `deb [signed-by=/usr/share/keyrings/onlyoffice-archive-keyring.gpg] https://download.onlyoffice.com/repo/debian squeeze main`
-# 
-#     14.3 Salve e feche o arquivo.
-# 
-# 15. **Atualizar a Lista de Pacotes:** Agora, atualize a lista de pacotes para aplicar as mudanças: `sudo apt update`
-# 
-#     Isso deve resolver o aviso sobre o uso do armazenamento de chave legado.
+#     Adicione um # no início da linha para comentá-la.
 
 # ## Referências
 # 
