@@ -56,7 +56,7 @@
 # 
 #     - Depois de concluída a instalação, você deve ser capaz de acessar o `OnlyOffice` em seu sistema `Linux Ubuntu`.
 # 
-#     - Lembrando que o uso de `snaps` pode variar dependendo da versão do `Linux Ubuntu` que você está usando, e essa é a forma recomendada de instalar o `OnlyOffice` nas versões mais recentes. Certifique-se de ter o Snap instalado em seu sistema. Se não o tiver, você pode instalá-lo com o seguinte comando: `sudo apt install snapd`
+#     - Lembrando que o uso de `snaps` pode variar dependendo da versão do `Linux Ubuntu` que você está usando, e essa é a forma recomendada de instalar o `OnlyOffice` nas versões mais recentes. Certifique-se de ter o `Snap` instalado em seu sistema. Se não o tiver, você pode instalá-lo com o seguinte comando: `sudo apt install snapd`
 # 
 # Após a instalação ser concluída, você pode acessar o `OnlyOffice` em seu sistema. Geralmente, ele estará disponível no menu de aplicativos.
 # 
@@ -77,7 +77,32 @@
 # 
 #     9.2 Remova ou comente as linhas do repositório problemático. Por exemplo: `sudo nano /etc/apt/sources.list.d/onlyoffice.list`
 # 
-#     Adicione um # no início da linha para comentá-la.
+#     Adicione um `#` no início da linha para comentá-la.
+
+# ### 1.2 Código completo para configurar/instalar
+# 
+# Para configurar/instalar/usar o `onlyoffice` no `Linux Ubuntu` sem precisar digitar linha por linha, você pode seguir estas etapas:
+# 
+# 1. Abra o `Terminal Emulator`. Você pode fazer isso pressionando: `Ctrl + Alt + T`
+# 
+# 2. Digite o seguinte comando e pressione `Enter`:
+# 
+#     ```
+#     sudo apt clean
+#     sudo apt autoclean
+#     sudo apt autoremove -y
+#     sudo apt update
+#     sudo apt --fix-broken install
+#     sudo apt clean
+#     sudo apt list --upgradable
+#     sudo apt full-upgrade -y
+#     sudo echo "deb https://download.onlyoffice.com/repo/debian squeeze main" | sudo tee /etc/apt/sources.list.d/onlyoffice.list
+#     sudo wget https://download.onlyoffice.com/repo/onlyoffice.key
+#     sudo apt-key add onlyoffice.key
+#     sudo apt update
+#     sudo snap install onlyoffice-desktopeditors
+#     ```
+#     
 
 # ## Referências
 # 
