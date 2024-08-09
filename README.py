@@ -15,7 +15,7 @@
 # 
 # `OnlyOffice`
 # 
-# O `OnlyOffice` é uma suíte de escritório online e de código aberto que oferece um conjunto abrangente de aplicativos para edição de documentos, planilhas e apresentações. Ele permite que indivíduos e equipes colaborem em tempo real, criando e editando documentos diretamente no navegador da web. O `OnlyOffice` suporta uma ampla variedade de formatos de arquivo, incluindo Microsoft Office, e oferece recursos avançados de formatação, revisão de documentos e controle de versão. Além disso, ele pode ser implantado em servidores locais ou em nuvem, proporcionando flexibilidade e segurança aos usuários. Com suas funcionalidades de colaboração e edição de documentos, o `OnlyOffice` é uma solução atraente para organizações que buscam uma alternativa de escritório online versátil e de código aberto.
+# O `OnlyOffice` é uma suíte de escritório online e de código aberto que oferece um conjunto abrangente de aplicativos para edição de documentos, planilhas e apresentações. Ele permite que indivíduos e equipes colaborem em tempo real, criando e editando documentos diretamente no navegador da _web_. O `OnlyOffice` suporta uma ampla variedade de formatos de arquivo, incluindo Microsoft Office, e oferece recursos avançados de formatação, revisão de documentos e controle de versão. Além disso, ele pode ser implantado em servidores locais ou em nuvem, proporcionando flexibilidade e segurança aos usuários. Com suas funcionalidades de colaboração e edição de documentos, o `OnlyOffice` é uma solução atraente para organizações que buscam uma alternativa de escritório online versátil e de código aberto.
 # 
 
 # ## 1. Configurar/Instalar/Usar o `OnlyOffice` no `Linux Ubuntu` [1]
@@ -52,15 +52,13 @@
 # 
 # 6. **Atualizar a lista de pacotes:** Atualize a lista de pacotes do sistema novamente para que o sistema reconheça o novo repositório: `sudo apt update`
 # 
-# 7. **Instalar o OnlyOffice:** Agora, você pode instalar o `OnlyOffice Community Edition` com o seguinte comando: `sudo snap install onlyoffice-desktopeditors`
+# 7. **Instalar o `snapd`**: Lembrando que o uso de `snaps` pode variar dependendo da versão do `Linux Ubuntu` que você está usando, e essa é a forma recomendada de instalar o `OnlyOffice` nas versões mais recentes. Certifique-se de ter o `Snap` instalado em seu sistema. Se não o tiver, você pode instalá-lo com o seguinte comando: `sudo apt install snapd -y`
 # 
-#     - Depois de concluída a instalação, você deve ser capaz de acessar o `OnlyOffice` em seu sistema `Linux Ubuntu`.
-# 
-#     - Lembrando que o uso de `snaps` pode variar dependendo da versão do `Linux Ubuntu` que você está usando, e essa é a forma recomendada de instalar o `OnlyOffice` nas versões mais recentes. Certifique-se de ter o `Snap` instalado em seu sistema. Se não o tiver, você pode instalá-lo com o seguinte comando: `sudo apt install snapd`
+# 8. **Instalar o `OnlyOffice`:** Agora, você pode instalar o `OnlyOffice Community Edition` com o seguinte comando: `sudo snap install onlyoffice-desktopeditors`
 # 
 # Após a instalação ser concluída, você pode acessar o `OnlyOffice` em seu sistema. Geralmente, ele estará disponível no menu de aplicativos.
 # 
-# Isso deve permitir que você instale o `OnlyOffice` no seu sistema Ubuntu.
+# Isso deve permitir que você instale o `OnlyOffice` no seu sistema `Linux Ubuntu`.
 # 
 
 # 8. Pode ser que aconteça o(s) erro(s): [2]
@@ -103,6 +101,17 @@
 #     sudo snap install onlyoffice-desktopeditors
 #     ```
 #     
+
+# ## 2. Desinstalar o `onlyoffice`
+# 
+# Para desinstalar o `OnlyOffice` no `Linux Ubuntu` usando o `Terminal Emulator`, abaixo estão os comandos:
+# 
+# 1. **Desinstalar `OnlyOffice` instalado via `Snap`**: Se você instalou o `OnlyOffice` via `Snap`, use o comando abaixo para removê-lo: `sudo snap remove onlyoffice-desktopeditors`
+# 
+# 2. **Remover Resíduos de Configuração (opcional)**: Se você quiser garantir que todas as configurações do `OnlyOffice` sejam removidas, incluindo arquivos de configuração, use o seguinte comando após a remoção: `sudo apt-get purge onlyoffice-desktopeditors`
+# 
+# Após a execução do comando apropriado, o `OnlyOffice` será desinstalado do seu sistema.
+# 
 
 # ## Referências
 # 
