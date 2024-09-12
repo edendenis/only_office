@@ -84,7 +84,8 @@ for dirpath, dirnames, filenames in os.walk('.'):
 # %% [markdown]
 # ## Referências
 # 
-# [1] OPENAI. ***Converter vários README.ipynb para .md e .py.*** Disponível em: <https://chat.openai.com/c/50f64d4d-cfe7-40ac-a8aa-27ffa4eb5a5e>. ChatGPT. Acessado em: 26/01/2024 11:35.
-# 
-
-
+# [1] OPENAI.
+# ***Converter vários README.ipynb para .md e .py.***
+# Disponível em: <https://chat.openai.com/c/50f64d4d-cfe7-40ac-a8aa-27ffa4eb5a5e>.
+# ChatGPT.
+# Acessado em: 26/01/2024 11:35.
